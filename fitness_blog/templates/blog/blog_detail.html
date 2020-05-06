@@ -1,0 +1,56 @@
+{% extends 'blog/basic.html' %}
+
+{% block body %}
+
+
+<div class="container">
+  <h1 class="text-white bg-dark my-3">{{blog.title}}</h1>
+
+     <img src="/media/{{blog.thumbnail}}" class="img-fluid" alt="Responsive image">
+
+<div class="container bg-dark">
+<div class="fb-like" data-href="http://localhost:3000/blog_detail/{{blog.post_id}}" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+</div>
+
+
+
+
+    <h1 class="text-white bg-dark my-3">{{blog.heading1}}</h1>
+    <img src="/media/{{blog.image1}}" class="img-fluid" alt="Responsive image">
+    <h6 class="text-white bg-dark my-3">{{blog.content1}}</h6>
+
+    <h1 class="text-white bg-dark my-3">{{blog.heading2}}</h1>
+    <img src="/media/{{blog.image2}}" class="img-fluid" alt="Responsive image">
+    <h6 class="text-white bg-dark my-3">{{blog.content2}}</h6>
+
+    <h1 class="text-white bg-dark my-3">{{blog.heading3}}</h1>
+    <img src="/media/{{blog.image3}}" class="img-fluid" alt="Responsive image">
+    <h6 class="text-white bg-dark my-3">{{blog.content3}}</h6>
+
+    <h1 class="text-white bg-dark my-3">{{blog.heading4}}</h1>
+    <img src="/media/{{blog.image4}}" class="img-fluid" alt="Responsive image">
+    <h6 class="text-white bg-dark my-3">{{blog.content4}}</h6>
+
+    <h1 class="text-white bg-dark my-3">{{blog.heading5}}</h1>
+    <img src="/media/{{blog.image5}}" class="img-fluid" alt="Responsive image">
+    <h6 class="text-white bg-dark my-3">{{blog.content5}}</h6>
+
+    <h1 class="text-white bg-dark my-3">{{blog.heading6}}</h1>
+    <img src="/media/{{blog.image6}}" class="img-fluid" alt="Responsive image">
+    <h6 class="text-white bg-dark my-3">{{blog.content6}}</h6>
+
+
+
+</div>
+
+<div class="container p-3 mb-2 bg-light text-dark" >
+   <div class="fb-like" data-href="http://localhost:3000/blog_detail/{{blog.post_id}}" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+<h1 class="text-white bg-danger my-3">Your Comment: </h1>
+
+
+  <div class="fb-comments" data-href="http://localhost:3000/blog_detail/{{blog.post_id}}" data-width="400" data-numposts=5></div>
+
+</div>
+  <!--<h1 >{{blog.content}}</h1>-->
+
+{% endblock %}

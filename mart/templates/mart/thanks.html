@@ -1,0 +1,14 @@
+{% extends 'mart/basic-template.html' %}
+{% block body %}
+{% load static %}
+
+
+<div class="container col-md-4">
+    <h2 class="my-4"><span class="bg-danger text-white">Thank you {{name}}! for shopping</span></h2>
+    <h2 class="my-4"><span class="bg-danger text-white">ComeBack Soon!</span></h2>
+
+</div>
+<script>
+    localStorage.clear()
+</script>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'mart/basic-template.html' %}
+{% block body %}
+{% load static %}
+
+  <div class="container col-md-4">
+  <h1 class="text-white my-3"><span class="bg-danger">Please Provide The Required Details:</span></h1>
+
+
+
+    <form method="post" action={% url 'confirm-checkout' %}>  {% csrf_token %}
+    <input type="hidden" name="itemsJson" id="itemsJson">
+  <div class="form-group">
+    <label for="formGroupExampleInput" class="text-white bg-dark">Name</label>
+    <span ><input type="text" class="form-control" name="name" placeholder="Your Name Here" required></span>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2" class="text-white bg-dark">Phone</label>
+    <input type="number" class="form-control" name="phone" placeholder="Your Phone Number" required>
+  </div>
+
+      <div class="form-group">
+    <label for="formGroupExampleInput2" class="text-white bg-dark">Address</label>
+    <input type="text" class="form-control" name="address" placeholder="Address" required>
+  </div>
+
+      <div class="form-group">
+    <label for="formGroupExampleInput2" class="text-white bg-dark">Any Message Regarding Your Order</label>
+        <textarea type="textfield" class="form-control" name="msg" placeholder="Any Specifications" rows="3" required></textarea>
+  </div>
+      <button type="submit" onclick="sent()" class="btn btn-danger mb-2">Confirm Order</button>
+</form>
+
+
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+
+<script>
+function sent(){
+d = localStorage
+console.log(d)
+$('#itemsJson').val(JSON.stringify(d));
+}
+
+</script>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+

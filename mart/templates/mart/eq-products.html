@@ -1,0 +1,36 @@
+{% extends 'mart/basic-template.html' %}
+{% block body %}
+
+        <h2 class="my-4 text-white bg-dark">{{cat}}</h2>
+
+
+    <div class="card-group">
+
+    {% for item in t %}
+
+          <div class="card my-3 text-white bg-dark mb-3" style="width: 18rem;">
+
+            <img src="/media/{{item.thumbnail}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.product_name}}</h5>
+              <p class="card-text">{{item.thumbnail_desc}}</p>
+                 <h3 class="text-white my-3"><span class="bg-dark">{{item.price}}<span></span></h3>
+              <a href="{% url 'eqdetail' id=item.post_id %}" class="btn btn-primary">View</a>
+
+
+            </div>
+          </div>
+
+    {% if forloop.counter|divisibleby:4 %}
+                </div>
+        <div class="card-group">
+    {% endif %}
+
+   {% endfor %}
+
+        </div>
+        </div>
+
+
+
+{% endblock %}

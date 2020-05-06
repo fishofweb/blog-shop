@@ -1,0 +1,60 @@
+{% extends 'mart/basic-template.html' %}
+{% block body %}
+{% load static %}
+
+<div class="container" xmlns="http://www.w3.org/1999/html">
+
+
+
+
+
+<div class="container my-4">
+     <h1 class="text-white bg-dark">{{length}} Products are found</h1>
+
+<div class="row">
+    {% for item in post %}
+
+          <div class="card my-3 text-white bg-dark mb-3" style="width: 12rem;">
+
+            <img src="/media/{{item.thumbnail}}" class="card-img-top" alt="...">
+
+              <h5 class="card-title">{{item.product_name}}</h5>
+              <p class="card-text">{{item.thumbnail_desc}}</p>
+                {% if item.category == "na" %}
+              <a href="{% url 'nadetail' id=item.post_id %}" class="btn btn-primary">View</a>
+                {% endif %}
+
+                 {% if item.category == 'wt' %}
+              <a href="{% url 'wtdetail' id=item.post_id %}" class="btn btn-primary">View</a>
+                {% endif %}
+
+                 {% if item.category == 'ws' %}
+              <a href="{% url 'wsdetail' id=item.post_id %}" class="btn btn-primary">View</a>
+                {% endif %}
+
+                 {% if item.category == 'ms' %}
+              <a href="{% url 'msdetail' id=item.post_id %}" class="btn btn-primary">View</a>
+                {% endif %}
+
+                 {% if item.category == 'mt' %}
+              <a href="{% url 'mtdetail' id=item.post_id %}" class="btn btn-primary">View</a>
+                {% endif %}
+
+                 {% if item.category == "eq" %}
+                    <a href="{% url 'eqdetail' id=item.post_id %}" class="btn btn-primary">View</a>
+                {% endif %}
+
+            </div>
+
+
+    {% if forloop.counter|divisibleby:5 %}
+     </div><div class="row">
+    {% endif %}
+   {% endfor %}
+</div>
+
+
+
+{% endblock %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->

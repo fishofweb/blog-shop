@@ -1,0 +1,64 @@
+{% extends 'blog/basic.html' %}
+
+{% block body %}
+
+
+<h1 style="color:white; background-color: black"> {{post.title}} </h1>
+
+    <div class="card mb-5" style="width: 40rem;">
+    <img src="/media/{{post2.image1}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{post2.heading1}}</h5>
+      <p class="card-text">{{post2.content1}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+  <div class="card mb-5" style="width: 40rem;">
+    <img src="/media/{{post2.image2}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{post2.heading2}}</h5>
+      <p class="card-text">{{post2.content2}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+  <div class="card mb-5" style="width: 40rem;">
+    <img src="/media/{{post2.image3}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{post2.heading3}}</h5>
+      <p class="card-text">{{post2.content3}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+  <div class="card mb-5" style="width: 40rem;">
+    <img src="/media/{{post2.image4}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{post2.heading4}}</h5>
+      <p class="card-text">{{post2.content4}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+<!--{% load static %}-->
+  <div class="card mb-5" style="width: 40rem;">
+    <img src="/media/{{post2.image5}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{post2.heading5}}</h5>
+      <p class="card-text">{{post2.content5}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+
+  <div class="card mb-5" style="width: 40rem;">
+    <img src="/media/{{post2.image6}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{post2.heading6}}</h5>
+      <p class="card-text">{{post2.content6}}</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+
+{% endblock %}

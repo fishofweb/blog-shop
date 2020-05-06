@@ -1,0 +1,202 @@
+{% extends 'mart/basic-template.html' %}
+
+{% block body %}
+
+
+
+        <div class="container-sm">
+        <h2 class="my-4 text-white bg-danger">New Arrivals</h2>
+            <div class="card-group">
+         {% for item in na %}
+
+          <div class="card text-white bg-dark mb-3" style="width: 15rem;">
+
+            <img src="/media/{{item.thumbnail}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.product_name}}</h5>
+              <p class="card-text">{{item.thumbnail_desc}}</p>
+             <h3 class="text-white my-3"><span class="bg-dark">Rs.{{item.price}}<span></span></h3>
+              <a href="naproduct_detail/{{item.post_id}}" class="btn btn-primary">View Product</a>
+
+
+            </div>
+          </div>
+                 {% if forloop.counter|divisibleby:4 %}
+    </div>
+        <div class="card-group">
+    {% endif %}
+
+   {% endfor %}
+
+        </div>
+    <a class="btn btn-danger" href={% url 'narrivals' %} role="button">See More</a>
+
+        </div>
+
+
+
+      <h2 class="my-4 text-white bg-dark">Men Trousers</h2>
+
+
+    <div class="card-group">
+
+    {% for item in mt %}
+
+          <div class="card my-3 text-white bg-dark mb-3" style="width: 18rem;">
+
+            <img src="/media/{{item.thumbnail}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.product_name}}</h5>
+              <p class="card-text">{{item.thumbnail_desc}}</p>
+             <h3 class="text-white my-3"><span class="bg-dark">Rs.{{item.price}}<span></span></h3>
+              <a href="mtproduct_detail/{{item.post_id}}" class="btn btn-primary">View</a>
+
+
+            </div>
+          </div>
+
+    {% if forloop.counter|divisibleby:4 %}
+                </div>
+        <div class="card-group">
+    {% endif %}
+
+   {% endfor %}
+
+        </div>
+ <a class="btn btn-danger" href={% url 'mtrousers' %} role="button">See More</a>
+
+
+
+
+      <h2 class="my-4 text-white bg-dark">Women Trousers</h2>
+
+
+    <div class="card-group">
+
+    {% for item in wt %}
+
+          <div class="card my-3 text-white bg-dark mb-3" style="width: 18rem;">
+
+            <img src="/media/{{item.thumbnail}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.product_name}}</h5>
+              <p class="card-text">{{item.thumbnail_desc}}</p>
+                 <h3 class="text-white my-3"><span class="bg-dark">Rs.{{item.price}}<span></span></h3>
+              <a href="wtproduct_detail/{{item.post_id}}" class="btn btn-primary">View</a>
+
+
+            </div>
+          </div>
+
+    {% if forloop.counter|divisibleby:4 %}
+                </div>
+        <div class="card-group">
+    {% endif %}
+
+   {% endfor %}
+
+        </div>
+<a class="btn btn-danger" href={% url 'wtrousers' %} role="button">See More</a>
+
+
+
+
+      <h2 class="my-4 text-white bg-dark">Men Shirts</h2>
+
+
+    <div class="card-group">
+
+    {% for item in ms %}
+
+          <div class="card my-3 text-white bg-dark mb-3" style="width: 18rem;">
+
+            <img src="/media/{{item.thumbnail}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.product_name}}</h5>
+              <p class="card-text">{{item.thumbnail_desc}}</p>
+                 <h3 class="text-white my-3"><span class="bg-dark">Rs.{{item.price}}<span></span></h3>
+              <a href="msproduct_detail/{{item.post_id}}" class="btn btn-primary">View</a>
+
+
+            </div>
+          </div>
+
+    {% if forloop.counter|divisibleby:4 %}
+                </div>
+        <div class="card-group">
+    {% endif %}
+
+   {% endfor %}
+        </div>
+
+    <a class="btn btn-danger" href={% url 'mshirts' %} role="button">See More</a>
+
+
+
+
+      <h2 class="my-4 text-white bg-dark">Women Shirt</h2>
+
+
+    <div class="card-group">
+
+    {% for item in ws %}
+
+          <div class="card my-3 text-white bg-dark mb-3" style="width: 18rem;">
+
+            <img src="/media/{{item.thumbnail}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.product_name}}</h5>
+              <p class="card-text">{{item.thumbnail_desc}}</p>
+             <h3 class="text-white my-3"><span class="bg-dark">Rs.{{item.price}}<span></span></h3>
+              <a href="wsproduct_detail/{{item.post_id}}" class="btn btn-primary">View</a>
+
+
+            </div>
+          </div>
+
+    {% if forloop.counter|divisibleby:4 %}
+                </div>
+        <div class="card-group">
+    {% endif %}
+
+   {% endfor %}
+
+        </div>
+    <a class="btn btn-danger" href={% url 'wshirts' %} role="button">See More</a>
+
+
+
+      <h2 class="my-4 text-white bg-dark">Equipment</h2>
+
+
+    <div class="card-group">
+
+    {% for item in eq %}
+
+          <div class="card my-3 text-white bg-dark mb-3" style="width: 18rem;">
+
+            <img src="/media/{{item.thumbnail}}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.product_name}}</h5>
+              <p class="card-text">{{item.thumbnail_desc}}</p>
+             <h3 class="text-white my-3"><span class="bg-dark">Rs.{{item.price}}<span></span></h3>
+              <a href="eqproduct_detail/{{item.post_id}}" class="btn btn-primary">View</a>
+
+
+            </div>
+          </div>
+
+    {% if forloop.counter|divisibleby:4 %}
+                </div>
+        <div class="card-group">
+    {% endif %}
+
+   {% endfor %}
+
+
+        </div>
+<a class="btn btn-danger" href={% url 'machines' %} role="button">See More</a>
+
+
+   </div>
+{% endblock %}

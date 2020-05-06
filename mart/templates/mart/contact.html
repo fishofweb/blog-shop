@@ -1,0 +1,51 @@
+{% extends 'mart/basic-template.html' %}
+{% block body %}
+{% load static %}
+<div class="container col-md-4">
+    <h2 class="my-4"><span class="bg-danger text-white">Contact</span></h2>
+<form method="post" action={% url 'ctus' %}> {% csrf_token %}
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" name="fname" placeholder="Your Name">
+    </div>
+  </div>
+    <div class="form-row">
+    <div class="col">
+      <input type="email" class="form-control" name="email" placeholder="Email">
+    </div>
+    </div>
+
+
+<div class="form-row">
+    <div class="col-7">
+      <input type="text" class="form-control" name="city" placeholder="City">
+    </div>
+</div>
+    <div class="form-row">
+<div class="col-7">
+      <input type="tel" class="form-control" name="phone" placeholder="Phone / Cell ">
+    </div>
+    </div>
+    <div class="form-group my-3">
+    <label for="exampleFormControlTextarea1"><span class="bg-danger text-white">Your Message</span> </label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
+  </div>
+<button type="submit" class="btn btn-primary">{{message}}</button>
+</form>
+</div>
+    {% endblock %}
+
+
+
+
+
+
+
+  </div>
+</form>
+
+
+
+
+</body>
+</html>

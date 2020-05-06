@@ -1,0 +1,85 @@
+{% extends 'mart/basic-template.html' %}
+{% block body %}
+{% load static %}
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+      <img src="/media/{{t.image1}}" alt="..." class="img-thumbnail">
+    </div>
+    <div class="col-sm">
+      <img src="/media/{{t.image2}}" alt="..." class="img-thumbnail">
+    </div>
+
+    <div class="col-sm">
+      <img src="/media/{{t.image3}}" alt="..." class="img-thumbnail">
+    </div>
+  </div>
+    <h1 class="text-white my-3"><span class="bg-danger">{{t.product_name}}</span></h1>
+     <h3 class="text-white my-3"><span class="bg-dark">Rs.{{t.price}}<span></span></h3>
+    <h3 class="text-white my-3"><span class="bg-dark">{{t.full_desc}}</span></h3>
+    <span id="q{{t.category}}+{{t.post_id}}" class="bg-danger text-white">
+      <div class="row">
+        <span> <input type="number" id="qty" class="form-control mx-3" placeholder="How many?" value=""></span>
+    </div>
+    <a id="{{t.category}}+{{t.post_id}}" onclick="add()" class="btn btn-danger cart my-2" href="#" role="button">Add To Cart</a>
+    </span>
+
+</div>
+
+ <script>
+
+
+
+
+      n = 1;
+  //    const item = {
+  //  name: "{{t.product_name}}",
+  //  id: "{{t.post_id}}",
+    //price: "{{t.price}}",
+  //  category: "{{t.category}}",
+   // }
+      x = "q{{t.category}}+{{t.post_id}}";
+      storage = Object.keys(localStorage)
+      for (i in storage) {
+        if (x == storage[i]){
+
+         document.getElementById(x).innerHTML = ` <h1><span class="bg-danger">Added</span></h1> `;
+        }
+
+
+        }
+
+        function add(){
+
+        var quantity= document.getElementById('qty').value;
+        console.log(quantity);
+        if (quantity > 0 ){
+         const item = {
+            name: "{{t.product_name}}",
+             id: "{{t.post_id}}",
+           price: "{{t.price}}",
+           qty:quantity,
+           category: "{{t.category}}",
+           }
+
+        x = "q{{t.category}}+{{t.post_id}}";
+
+        window.localStorage.setItem(x, JSON.stringify(item));
+        n = n+1;
+        console.log(x +"check this key" + n);
+        document.getElementById(x).innerHTML = ` <h1><span class="bg-danger">Added</span></h1> `;
+        document.getElementById('cart').innerHTML =  Object.keys(localStorage).length;
+        }
+        else{
+        alert("enter quantity");
+        }
+        };
+
+
+        </script>
+
+
+{% endblock %}
+

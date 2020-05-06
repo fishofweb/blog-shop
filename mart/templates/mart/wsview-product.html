@@ -1,0 +1,29 @@
+{% extends 'mart/basic-template.html' %}
+{% block body %}
+{% load static %}
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-sm">
+      <img src="/media/{{t.image1}}" alt="..." class="img-thumbnail">
+    </div>
+    <div class="col-sm">
+      <img src="/media/{{t.image2}}" alt="..." class="img-thumbnail">
+    </div>
+
+    <div class="col-sm">
+      <img src="/media/{{t.image3}}" alt="..." class="img-thumbnail">
+    </div>
+  </div>
+    <h1 style="color:white">{{t.product_name}}</h1>
+
+   <h1 class="text-white my-3"><span class="bg-danger">{{t.product_name}}<span></span></h1>
+
+    <h3 class="text-white my-3"><span class="bg-dark">{{t.full_desc}}<span></span></h3>
+
+    <a class="btn btn-danger" href="#" role="button">Add To Cart</a>
+</div>
+
+
+{% endblock %}
